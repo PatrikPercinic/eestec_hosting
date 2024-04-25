@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'home_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -46,7 +47,7 @@ class _LoginPageState extends State<LoginPage> {
       body: Container(
         color:Color(0xff333333),
         child: Padding(
-          padding: const EdgeInsets.all(200.0),
+          padding: const EdgeInsets.all(80.0),
           child: Form(
             key: _formKey,
             child: Column(
@@ -85,6 +86,10 @@ class _LoginPageState extends State<LoginPage> {
                       _formKey.currentState!.save();
                       // TODO: Handle login logic here
                       print('Username: $_username, Password: $_password');
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(builder: (context) => const HomePage()),
+                      );
                     }
                   },
                   child: Text('Login'),
